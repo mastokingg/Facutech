@@ -587,6 +587,99 @@
       margin-right: 0.8rem;
     }
 
+    /* CELULAR */
+    #celular { background: var(--surface); }
+
+    .celular-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .celular-card {
+      background: var(--card);
+      padding: 2.5rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .celular-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .celular-card:hover::before { transform: scaleX(1); }
+    .celular-card:hover { background: #1e1e2a; }
+
+    .celular-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+
+    .celular-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* HERRAMIENTAS */
+    #herramientas { background: var(--bg); }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      max-width: 960px;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .tool-card:hover {
+      border-color: rgba(0,229,255,0.4);
+      transform: translateY(-3px);
+    }
+
+    .tool-emoji {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tool-info strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .tool-info span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     /* SCROLL REVEAL */
     .reveal {
       opacity: 0;
@@ -618,6 +711,8 @@
   <ul>
     <li><a href="#inicio">Inicio</a></li>
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#celular">Celulares</a></li>
+    <li><a href="#herramientas">Herramientas</a></li>
     <li><a href="#precios">Precios</a></li>
     <li><a href="#contacto" class="nav-cta">Contacto</a></li>
   </ul>
@@ -700,6 +795,118 @@
       <div class="service-icon">🏠</div>
       <h3>Servicio a domicilio</h3>
       <p>Retiramos y entregamos tu equipo en casa. También brindamos soporte presencial para quienes no pueden transportar su PC.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REPARACIÓN CELULAR -->
+<section id="celular">
+  <div class="reveal">
+    <span class="section-tag"><span class="line-accent"></span>También trabajamos con móviles</span>
+    <h2>Reparación<br>de celulares</h2>
+    <p class="section-intro">
+      No solo PCs. Reparamos smartphones con fallas de hardware y software para que vuelvan a funcionar como el primer día.
+    </p>
+  </div>
+  <div class="celular-grid reveal">
+    <div class="celular-card">
+      <div class="service-icon">🔋</div>
+      <h3>Reemplazo de batería</h3>
+      <p>Si tu celular no dura nada con carga, cambiamos la batería por una de calidad. Trabajo limpio, sin dañar la pantalla ni la carcasa.</p>
+    </div>
+    <div class="celular-card">
+      <div class="service-icon">🔌</div>
+      <h3>Reparación de puerto de carga</h3>
+      <p>Carga lenta, intermitente o que directamente no carga. Limpiamos o reemplazamos el conector según el caso.</p>
+    </div>
+    <div class="celular-card">
+      <div class="service-icon">💧</div>
+      <h3>Daño por líquido</h3>
+      <p>Limpieza interna urgente ante contacto con agua u otro líquido, para evitar daños permanentes en los componentes.</p>
+    </div>
+    <div class="celular-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Reparación de software</h3>
+      <p>Reinstalación del sistema, eliminación de virus, desbloqueo de cuenta Google y recuperación de acceso por contraseña olvidada.</p>
+    </div>
+    <div class="celular-card">
+      <div class="service-icon">📶</div>
+      <h3>Fallas de conectividad</h3>
+      <p>Problemas con WiFi, Bluetooth o señal de red. Diagnóstico y reparación de los módulos de conectividad.</p>
+    </div>
+    <div class="celular-card">
+      <div class="service-icon">📱</div>
+      <h3>Diagnóstico general</h3>
+      <p>Si tu celular falla pero no sabés bien qué tiene, hacemos un diagnóstico completo y te explicamos qué se puede reparar y a qué costo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HERRAMIENTAS -->
+<section id="herramientas">
+  <div class="reveal">
+    <span class="section-tag"><span class="line-accent"></span>Equipamiento profesional</span>
+    <h2>Herramientas<br>que usamos</h2>
+    <p class="section-intro">
+      Trabajamos con las herramientas correctas para garantizar un servicio limpio, seguro y profesional en cada reparación.
+    </p>
+  </div>
+  <div class="tools-grid reveal">
+    <div class="tool-card">
+      <div class="tool-emoji">🔩</div>
+      <div class="tool-info">
+        <strong>Kit de destornilladores de precisión</strong>
+        <span>Puntas PH0, PH1, Torx y pentalobe para abrirPCs, notebooks y celulares sin dañar los tornillos.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">💨</div>
+      <div class="tool-info">
+        <strong>Soplador de aire comprimido</strong>
+        <span>Para limpiar el polvo acumulado en coolers, disipadores y ranuras sin usar líquidos.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🌡️</div>
+      <div class="tool-info">
+        <strong>Pasta térmica de calidad</strong>
+        <span>Aplicamos pasta térmica profesional en CPU y GPU para mantener temperaturas bajas y estables.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🔬</div>
+      <div class="tool-info">
+        <strong>Multímetro digital</strong>
+        <span>Para medir voltaje, continuidad y detectar componentes en cortocircuito o dañados.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🧰</div>
+      <div class="tool-info">
+        <strong>Pulsera antiestática</strong>
+        <span>Trabajamos con protección ESD para no dañar los componentes electrónicos sensibles.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🖥️</div>
+      <div class="tool-info">
+        <strong>PC de diagnóstico</strong>
+        <span>Equipo propio con herramientas como HWiNFO, CrystalDiskInfo y MemTest86 para testear componentes.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🧪</div>
+      <div class="tool-info">
+        <strong>Alcohol isopropílico</strong>
+        <span>Para limpieza de contactos, remoción de pasta térmica vieja y limpieza de PCBs.</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-emoji">🔦</div>
+      <div class="tool-info">
+        <strong>Linterna y lupa</strong>
+        <span>Para inspección visual de soldaduras, pistas dañadas y componentes pequeños.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -823,6 +1030,8 @@
           <option>Mantenimiento preventivo</option>
           <option>Instalación de software</option>
           <option>Venta de componentes</option>
+          <option>Mantenimiento de celular</option>
+          <option>Reparación de celular</option>
           <option>Consulta general</option>
         </select>
       </div>
